@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+header {
+  background-color: #fff;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  .nav-wrapper {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: 0 auto;
+    h4 {
+      font-size: 20px;
+      color: rgb(87, 194, 236);
+    }
+    ul {
+      display: flex;
+      gap: 35px;
+      li {
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: 500;
+          font-size: 18px;  
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .menu-openbtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 30px;
+      display: none;
+      height: 30px;
+      width: 30px;
+      transform: translateY(-5px);
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.main {
+  height: calc(100vh - 76px);
+  width: 100%;
+  background-color: #808080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .color-container {
+    background-color: black;
+    border: 1px solid #fff;
+    color: #fff;
+    width: fit-content;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    span {
+      color: skyblue;
+    }
+    button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -54px;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 5px 20px;
+      border-radius: 5px;
+      background: #fff;
+      cursor: pointer;
+    }
+    button:active {
+      opacity: 80%;
+    }
+  }
+}
+@media screen and (max-width: 499px) {
+  header .nav-wrapper {
+    width:  95%;
+  }
+}
+@media screen and (max-width: 999px) {
+  ul {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 77px;
+    background: #fff;
+    width: 100%;
+    padding-left: 20px;
+    transform: scale(1,0);
+    transform-origin: 100% 0%;
+    transition: all 0.5s;
+    border: none;
+    li {
+      padding: 10px 0;
+    }
+    
+  }
+  .menu-openbtn {
+    display: flex !important;
+  }
+}
+.nav-active {
+  ul {
+    transform: scale(1,1);
+    // height: auto !important;
+    border-bottom: 1px solid #000;
+    
+  }
+  #open {
+    display: none;
+  }
+  #close {
+    display: block !important;
+  }
+}
